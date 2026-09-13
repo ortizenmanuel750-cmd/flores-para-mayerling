@@ -1,32 +1,76 @@
-
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Mayerling 💛</title>
 <style>
-    body { 
-        margin: 0; 
-        background: radial-gradient(circle at center, #332200 0%, #000 100%); 
-        overflow: hidden; 
+    body {
+        margin: 0;
+        background: radial-gradient(circle at center, #1a1a1a, #000);
+        overflow: hidden;
         font-family: Arial;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
+        color: #FFD700;
+        flex-direction: column;
     }
-    #contenedor { text-align: center; position: relative; }
-    #titulo { color: #FFE55C; font-size: 3em; text-shadow: 0 0 30px #FFD966; animation: brillo 2.5s infinite; margin: 0; }
-    #sub { color: #FFF2B5; font-size: 1.3em; margin: 10px; }
-    @keyframes brillo { 0%,100%{text-shadow:0 0 20px #FFD966} 50%{text-shadow:0 0 60px #FFE55C} }
-    
+    h1 {
+        font-size: 2.5em;
+        text-shadow: 0 0 20px #FFD700;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
     #sol {
-        width: 120px; height: 120px;
-        background: radial-gradient(circle, #FFE55C 0%, #FFD700 100%);
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle, #FFD700 0%, #FFA500 70%, #FF8C00 100%);
         border-radius: 50%;
-        margin: 30px auto;
-        box-shadow: 0 0 60px #FFE55C;
-        animation: girar 20s linear infinite;
+        box-shadow: 0 0 80px #FFD700, 0 0 120px #FFA500;
+        animation: giro 20s linear infinite;
         position: relative;
+        cursor: pointer;
     }
-    @keyframes girar { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    #sol::before {
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: -25px;
+        left: -25px;
+        background: repeating-conic-gradient(from 0deg, #FFD700 0deg 15deg, transparent 15deg 30deg);
+        border-radius: 50%;
+        animation: giro 20s linear infinite reverse;
+    }
+    @keyframes giro {
+        to { transform: rotate(360deg); }
+    }
+    button {
+        margin-top: 40px;
+        padding: 15px 30px;
+        font-size: 18px;
+        background: #FFD700;
+        color: #000;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 0 20px #FFD700;
+    }
+    button:hover {
+        transform: scale(1.1);
+    }
+</style>
+</head>
+<body>
+    <h1>Para Mayerling 💛</h1>
+    <p>Eres la flor más hermosa</p>
+    <div id="sol"></div>
+    <button onclick="alert('No pude darte un ramo real, pero al menos quise hacerte este pequeño detalle para ti. Ten lindo día bonita 💛')">Toca el girasol 🌻</button>
+</body>
+</html>
